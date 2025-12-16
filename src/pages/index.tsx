@@ -1,31 +1,35 @@
 import React from 'react'
 import styled from 'styled-components'
+import Layout from '../components/Layout'
 
-const Wrapper = styled.main`
-  min-height: 100vh;
-  background: #1e90ff;
+const Hero = styled.section`
+  background: radial-gradient(1200px 480px at 20% 0%, #0b1f3f 0, #183763 40%, #22457f 70%, #26579f 100%);
   color: #ffffff;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 48px 24px;
+  padding: 64px 24px;
 `
 
-const Card = styled.section`
+const Container = styled.div`
   width: 100%;
-  max-width: 880px;
+  max-width: 1120px;
+  margin: 0 auto;
+`
+
+const HeroInner = styled.div`
   display: grid;
-  gap: 24px;
+  gap: 16px;
+  align-items: center;
+  justify-items: start;
 `
 
 const Title = styled.h1`
-  font-size: 40px;
-  font-weight: 700;
+  font-size: 44px;
+  font-weight: 800;
+  letter-spacing: 0.3px;
 `
 
 const Subtitle = styled.p`
   font-size: 18px;
-  opacity: 0.9;
+  opacity: 0.92;
 `
 
 const Actions = styled.div`
@@ -35,45 +39,108 @@ const Actions = styled.div`
 `
 
 const Action = styled.a`
-  background: #ffffff;
-  color: #1e90ff;
+  background: #ffcc00;
+  color: #0b1f3f;
   border-radius: 8px;
   padding: 10px 14px;
-  font-weight: 600;
+  font-weight: 700;
 `
 
-const Tags = styled.ul`
+const Section = styled.section`
+  padding: 36px 24px;
+`
+
+const TagSection = styled(Section)`
+  height: 150px;
+  background: #0033ffff;
   display: flex;
-  gap: 8px;
-  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+
+  & h2 {
+    font-size: 275px;
+    font-weight: 800;
+    color: #ffffff;
+    position: relative;
+    top: -40px;
+  }
+`;
+
+const SectionTitle = styled.h2`
+  font-size: 24px;
+  font-weight: 800;
+  color: #0b1f3f;
 `
 
-const Tag = styled.li`
-  background: rgba(255, 255, 255, 0.18);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.3);
-  padding: 6px 10px;
-  border-radius: 999px;
-  font-size: 14px;
+const NewsCard = styled.article`
+  background: #ffffff;
+  border: 2px solid #ffcc00;
+  border-radius: 12px;
+  padding: 16px;
+  display: grid;
+  gap: 8px;
+  color: #0b1f3f;
+`
+
+const Grid = styled.ul`
+  display: grid;
+  gap: 12px;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  list-style: none;
+  padding: 0;
+  margin: 0;
+`
+
+const GridCard = styled.li`
+  background: #ffffff;
+  border: 1px solid #e7edf6;
+  border-radius: 10px;
+  padding: 14px;
+  color: #0b1f3f;
+  font-weight: 600;
 `
 
 const IndexPage: React.FC = () => {
   const skills = ['Gatsby', 'React', 'TypeScript', 'Styled-Components', 'SEO', 'SSG']
   return (
-    <Wrapper>
-      <Card>
-        <Title>안녕하세요, USOPP입니다ㅋㅋ</Title>
-        <Subtitle>프론트엔드 개발자 포트폴리오</Subtitle>
-        <Actions>
-          <Action href="https://github.com/" target="_blank" rel="noreferrer">
-            GitHub
-          </Action>
-          <Action href="mailto:hello@example.com">Email</Action>
-          <Action href="/resume.pdf">Resume</Action>
-        </Actions>
-        <Tags>{skills.map((s) => <Tag key={s}>{s}</Tag>)}</Tags>
-      </Card>
-    </Wrapper>
+    <Layout>
+      <Section id="move-img">
+
+      </Section>
+      <TagSection id="tag">
+        <h2>USOPP</h2>
+      </TagSection>
+      <Section id="news">
+        <Container>
+          <SectionTitle>NEWS</SectionTitle>
+          <NewsCard>
+            <strong>チョイ見せ！来週の『ONE PIECE』冒頭をチョイ見せ！</strong>
+            <span>2025/12/12</span>
+            <span>次号の週刊少年ジャンプ（新年3号）の『ONE PIECE』は休載。再開は新年4・5合併号（12月22日発売）。</span>
+          </NewsCard>
+        </Container>
+      </Section>
+
+      <Section id="features">
+        <Container>
+          <SectionTitle>FEATURES</SectionTitle>
+          <Grid>
+            {skills.map((s) => <GridCard key={s}>{s}</GridCard>)}
+          </Grid>
+        </Container>
+      </Section>
+
+      <Section id="links">
+        <Container>
+          <SectionTitle>LINKS</SectionTitle>
+          <Grid>
+            <GridCard><a href="https://one-piece.com/index.html" target="_blank" rel="noreferrer">ONE PIECE.com</a></GridCard>
+            <GridCard><a href="https://www.danbee.ai" target="_blank" rel="noreferrer">danbee.ai</a></GridCard>
+            <GridCard><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></GridCard>
+          </Grid>
+        </Container>
+      </Section>
+    </Layout>
   )
 }
 
