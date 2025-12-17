@@ -1,5 +1,5 @@
 import React from 'react'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import Layout from '../components/Layout'
 
 const Hero = styled.section`
@@ -58,11 +58,11 @@ const TagSection = styled(Section)`
   align-items: center;
 
   & h2 {
-    font-size: 275px;
+    font-size: 295px;
     font-weight: 800;
     color: #ffffff;
     position: relative;
-    top: -40px;
+    top: -52px;
   }
 `;
 
@@ -100,13 +100,75 @@ const GridCard = styled.li`
   font-weight: 600;
 `
 
+const MoveImageBackgroundSection = styled.section`
+  position: relative;
+  height: 150px;
+  background-image: url("/move/img.jpg");
+  background-size: cover;
+  background-position: center;
+  overflow: hidden;
+  &::after {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background: rgba(255,255,255,0.5);
+    pointer-events: none;
+  }
+`;
+
+const moveLeft = keyframes`
+  from { transform: translate3d(0,0,0); }
+  to { transform: translate3d(-50%,0,0); }
+`
+
+const MoveImgSection = styled.section`
+  position: relative;
+  padding: 0;
+  overflow: hidden;
+`
+
+const Strip = styled.div`
+  position: relative;
+  width: 100%;
+  overflow: hidden;
+  // padding: 8px 0;
+`
+
+const Track = styled.div<{ duration: number }>`
+  display: flex;
+  width: max-content;
+  animation: ${moveLeft} linear infinite;
+  animation-duration: ${(p) => `${p.duration}s`};
+  will-change: transform;
+`
+
+const Thumb = styled.img`
+  height: 200px;
+  width: 200px;
+  object-fit: cover;
+  background: #ffffff;
+`
+
 const IndexPage: React.FC = () => {
   const skills = ['Gatsby', 'React', 'TypeScript', 'Styled-Components', 'SEO', 'SSG']
   return (
     <Layout>
-      <Section id="move-img">
-
-      </Section>
+      <MoveImageBackgroundSection/>
+      <MoveImgSection className="move-img">
+        {[
+          { duration: 45, images: ['/move/1.svg','/move/2.svg','/move/3.svg','/move/4.svg','/move/5.svg','/move/6.svg','/move/7.svg','/move/8.svg'] },
+          { duration: 22, images: ['/move/5.svg','/move/6.svg','/move/7.svg','/move/8.svg','/move/1.svg','/move/2.svg','/move/3.svg','/move/4.svg'] },
+          { duration: 35, images: ['/move/3.svg','/move/4.svg','/move/5.svg','/move/6.svg','/move/7.svg','/move/8.svg','/move/1.svg','/move/2.svg'] }
+        ].map((row, idx) => (
+          <Strip key={idx}>
+            <Track duration={row.duration}>
+              {[...row.images, ...row.images].map((src, i) => (
+                <Thumb key={`${idx}-${i}`} src={src} alt="thumb" loading="lazy" />
+              ))}
+            </Track>
+          </Strip>
+        ))}
+      </MoveImgSection>
       <TagSection id="tag">
         <h2>USOPP</h2>
       </TagSection>
@@ -120,7 +182,6 @@ const IndexPage: React.FC = () => {
           </NewsCard>
         </Container>
       </Section>
-
       <Section id="features">
         <Container>
           <SectionTitle>FEATURES</SectionTitle>
@@ -129,7 +190,6 @@ const IndexPage: React.FC = () => {
           </Grid>
         </Container>
       </Section>
-
       <Section id="links">
         <Container>
           <SectionTitle>LINKS</SectionTitle>
