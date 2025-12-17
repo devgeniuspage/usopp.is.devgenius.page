@@ -172,34 +172,6 @@ const IndexPage: React.FC = () => {
       <TagSection id="tag">
         <h2>USOPP</h2>
       </TagSection>
-      <Section id="news">
-        <Container>
-          <SectionTitle>NEWS</SectionTitle>
-          <NewsCard>
-            <strong>チョイ見せ！来週の『ONE PIECE』冒頭をチョイ見せ！</strong>
-            <span>2025/12/12</span>
-            <span>次号の週刊少年ジャンプ（新年3号）の『ONE PIECE』は休載。再開は新年4・5合併号（12月22日発売）。</span>
-          </NewsCard>
-        </Container>
-      </Section>
-      <Section id="features">
-        <Container>
-          <SectionTitle>FEATURES</SectionTitle>
-          <Grid>
-            {skills.map((s) => <GridCard key={s}>{s}</GridCard>)}
-          </Grid>
-        </Container>
-      </Section>
-      <Section id="links">
-        <Container>
-          <SectionTitle>LINKS</SectionTitle>
-          <Grid>
-            <GridCard><a href="https://one-piece.com/index.html" target="_blank" rel="noreferrer">ONE PIECE.com</a></GridCard>
-            <GridCard><a href="https://www.danbee.ai" target="_blank" rel="noreferrer">danbee.ai</a></GridCard>
-            <GridCard><a href="https://github.com/" target="_blank" rel="noreferrer">GitHub</a></GridCard>
-          </Grid>
-        </Container>
-      </Section>
     </Layout>
   )
 }

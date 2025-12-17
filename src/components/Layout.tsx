@@ -17,9 +17,6 @@ const Main = styled.main`
 `
 
 const FooterWrap = styled.footer`
-  background: #0b1f3f;
-  color: #fff;
-  border-top: 4px solid #ffcc00;
 `
 
 const FooterInner = styled.div`
