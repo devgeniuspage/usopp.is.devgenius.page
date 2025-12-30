@@ -6,6 +6,8 @@
     "dev": "gatsby develop",
     "build": "gatsby build",
     "start": "gatsby serve",
+    "predeploy": "gatsby build",
+    "deploy": "gh-pages -d public",
     "typecheck": "tsc --noEmit",
     "lint": "eslint ."
   },
@@ -22,6 +24,7 @@
     "@types/react": "18.2.66",
     "@types/react-dom": "18.2.22",
     "eslint": "8.57.0",
-    "typescript": "5.6.3"
+    "typescript": "5.6.3",
+    "gh-pages": "6.1.1"
   }
 }
