@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import Header from './Header'
+import { AmbientParticles } from './AmbientParticles'
 import { Container } from './ui/container'
 
 const GlobalStyle = createGlobalStyle`
@@ -29,6 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   return (
     <>
       <GlobalStyle />
+      <AmbientParticles />
       <Header />
       <Main>{children}</Main>
       <FooterWrap>
