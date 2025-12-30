@@ -1,133 +1,14 @@
 <!DOCTYPE html>
-
 <html lang="ko">
-
 <head>
-  <!-- Global site tag (gtag.js) - Google Analytics -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-VG2RE6XVCH"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-
-    gtag('config', 'G-VG2RE6XVCH');
-  </script>
   <meta charset="UTF-8">
+  <meta viewport="width=device-width, initial-scale=1.0">
   <title>Hello!</title>
-
   <link rel="stylesheet" href="/css/reset.css">
-  <link rel="stylesheet" href="/css/jqcloud/jqcloud.min.css">
-  <link rel="stylesheet" href="/css/tippy/tippy.css">
-  <link rel="stylesheet" href="/css/tippy/scale.css">
-
-  <!-- jquery -->
-  <script src="/js/jquery/jquery.min.js"></script>
-
-  <!-- jqcloud -->
-  <script src="/js/jqcloud/jqcloud.min.js"></script>
-
-  <!-- tooltip -->
-  <script src="/js/tippy/popper.min.js"></script>
-  <script src="/js/tippy/tippy-bundle.umd.min.js"></script>
-
-  <style>
-    html, body { height: 100%; }
-
-    body {
-      background-color: dodgerblue;
-    }
-
-    .jqcloud-word {
-      color:white;
-      cursor:pointer;
-      -webkit-touch-callout: none; /* iOS Safari */
-      -webkit-user-select: none; /* Safari */
-      -khtml-user-select: none; /* Konqueror HTML */
-      -moz-user-select: none; /* Old versions of Firefox */
-      -ms-user-select: none; /* Internet Explorer/Edge */
-      user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-    }
-  </style>
-
 </head>
 
 <body>
   <div id="container" style="height:100%"></div>
   <script src="/js/index.js"></script>
-  
-  <div id="frogue-container" class="position-right-bottom"
-data-chatbot="f5cdae94-0ff1-4027-9ed5-96c6276b17ce"
-data-user="사용자ID"
-data-init-key="value"
-data-close-use="Y" data-close-bgcolor="#ffffff" data-close=linecolor="#000000"
-data-move-use="Y" data-move-bgcolor="#ffffff" data-move=linecolor="#000000"
-></div>
-<!-- data-init-식별키=값 으로 셋팅하면 챗플로우에 파라미터와 연동가능. 식별키는 소문자만 가능 -->
-<!-- data 속성 매뉴얼 https://doc.danbee.ai/channel_frogu.html -->
-<script>
-(function(d, s, id){
-    var js, fjs = d.getElementsByTagName(s)[0];
-    if (d.getElementById(id)) {return;}
-    js = d.createElement(s); js.id = id;
-    js.src = "https:\/\/danbee.ai/js/plugins/frogue-embed/frogue-embed.min.js";
-    fjs.parentNode.insertBefore(js, fjs);
-}(document, 'script', 'frogue-embed'));
-</script>
-  
-  
-<script type="module" src="https://danbee.ai/platformfile/blink/danbee-blink.bundled.js"></script>
-<!--<script type="module" src="/demo/danbee-blink.bundled.js"></script>-->
-<danbee-blink
-  defaultIconImage=""
-  activeIconImage=""
-  sttIconImage=""
-  welcomeMsg="나를 클릭하고 원하는 정보를 물어봐. 오바"
-  successMsg="워프 완료! 오바"
-  failureMsg="아이프라임 불가~ 새 창으로 열었다! 오바"
-  searchingMsg="찾는 중이다. 오바"
-  notFoundMsg="못찾았다. 오바"
-  dontMoveMsg="이미 도착해있는 장소다. 오바"
->
-  <script type="application/json">
-    [
-      { "id": 1, "type": "개인", "keyword": "주민등록등본", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015&HighCtgCD=A01010001&Mcode=10200" },
-      { "id": 2, "type": "개인", "keyword": "주민등록초본", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000015&HighCtgCD=A01010001&Mcode=10200" },
-      { "id": 3, "type": "개인", "keyword": "가족관계증명서", "url": "https://efamily.scourt.go.kr/pt/PtFrrpApplrInfoInqW.do?menuFg=02" },
-      { "id": 4, "type": "개인", "keyword": "기본증명서", "url": "https://efamily.scourt.go.kr/pt/PtFrrpApplrInfoInqW.do?menuFg=03" },
-      { "id": 5, "type": "개인", "keyword": "혼인관계증명서", "url": "https://efamily.scourt.go.kr/pt/PtFrrpApplrInfoInqW.do?menuFg=04" },
-      { "id": 6, "type": "개인", "keyword": "입양관계증명서", "url": "https://efamily.scourt.go.kr/pt/PtFrrpApplrInfoInqW.do?menuFg=05" },
-      { "id": 7, "type": "개인", "keyword": "친양자입양관계증명서", "url": "https://efamily.scourt.go.kr/pt/PtFrrpApplrInfoInqW.do?menuFg=06" },
-      { "id": 8, "type": "개인", "keyword": "제적등본", "url": "https://efamily.scourt.go.kr/pt/PtJjkpApplrInfoInqW.do?menuFg=10" },
-      { "id": 9, "type": "개인", "keyword": "제적초본", "url": "https://efamily.scourt.go.kr/pt/PtJjkpApplrInfoInqW.do?menuFg=11" },
-      { "id": 10, "type": "개인", "keyword": "지적(임야)도등본", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000027" },
-      { "id": 11, "type": "개인", "keyword": "부동산등기부등본열람", "url": "http://www.iros.go.kr/frontservlet?cmd=RISUWelcomeViewC" },
-      { "id": 12, "type": "개인", "keyword": "부동산등기부등본발급", "url": "http://www.iros.go.kr/frontservlet?cmd=RISUWelcomeIsuC" },
-      { "id": 13, "type": "개인", "keyword": "토지(임야)대장열람", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000026&HighCtgCD=A02001001&Mcode=10207" },
-      { "id": 14, "type": "개인", "keyword": "토지(임야)대장등본발급", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000026&HighCtgCD=A02001001&Mcode=10207" },
-      { "id": 15, "type": "개인", "keyword": "토지이용계획열람", "url": "https://www.eum.go.kr/web/ar/lu/luLandDet.jsp" },
-      { "id": 16, "type": "개인", "keyword": "부동산종합증명서", "url": "https://kras.go.kr:444/tcerikra/callEstateGnrlzCrtf.do" },
-      { "id": 17, "type": "개인", "keyword": "건축물대장말소신청", "url": "https://cloud.eais.go.kr/moct/awp/ada03/AWPADA03V01" },
-      { "id": 18, "type": "개인", "keyword": "건축물도로명주소변경ㆍ정정신청", "url": "https://cloud.eais.go.kr/moct/awp/ada03/AWPADA03V01" },
-      { "id": 19, "type": "개인", "keyword": "건축물대장등·초본", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=15000000098&HighCtgCD=A02004002&Mcode=10205" },
-      { "id": 20, "type": "개인", "keyword": "4대보험", "url": "https://www.4insure.or.kr/ins4/ptl/Main.do" },
-      { "id": 21, "type": "개인", "keyword": "출생신고", "url": "https://efamily.scourt.go.kr/ar/ArChkPrcd.do" },
-      { "id": 22, "type": "개인", "keyword": "개명신고", "url": "https://efamily.scourt.go.kr/ar/ArChgnmCAAFMgr.do" },
-      { "id": 23, "type": "개인", "keyword": "지방세 납세증명", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=13100000056&HighCtgCD=A03019002&FAX_TYPE=y&img=02&tp_seq=01&Mcode=10209/" },
-      { "id": 24, "type": "개인", "keyword": "납세증명서", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?HighCtgCD=A09002&CappBizCD=12100000011&tp_seq=01" },
-      { "id": 25, "type": "개인", "keyword": "소득금액증명", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?CappBizCD=12100000021&HighCtgCD=A-09002&FAX_TYPE=N&img=02&tp_seq=01&Mcode=10211" },
-      { "id": 26, "type": "개인", "keyword": "전입신고", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?HighCtgCD=A01004&CappBizCD=13100000016" },
-      { "id": 27, "type": "개인", "keyword": "병적증명서", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?HighCtgCD=A01002&CappBizCD=13000000016" },
-      { "id": 28, "type": "개인", "keyword": "안녕하세요", "url": "https://www.gov.kr/mw/AA020InfoCappView.do?HighCtgCD=A01002&CappBizCD=13000000016" },
-      { "id": 29, "type": "개인", "keyword": "단비", "url": "https://www.danbee.ai" },
-      { "id": 30, "type": "개인", "keyword": "스쿨", "url": "http://tcpschool.com" },
-      { "id": 31, "type": "개인", "keyword": "스쿨2", "url": "http://tcpschool.com2" },
-      { "id": 32, "type": "개인", "keyword": "스쿨3", "url": "http://tcpschool.com3" }
-    ]
-  </script>
-</danbee-blink>
-  
-  
-  
 </body>
 </html>

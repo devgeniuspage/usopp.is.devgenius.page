@@ -1,9 +1,9 @@
 import React from 'react'
 import styled, { createGlobalStyle } from 'styled-components'
 import Header from './Header'
+import { Container } from './ui/container'
 
 const GlobalStyle = createGlobalStyle`
-  *, *::before, *::after { box-sizing: border-box; }
   html, body, #___gatsby, #gatsby-focus-wrapper { height: 100%; }
   body { margin: 0; font-family: 'Noto Sans JP', system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, 'Apple SD Gothic Neo', 'Noto Sans KR', 'Malgun Gothic', sans-serif; background: #f7f9fc; color: #0b1f3f; }
   a { color: inherit; text-decoration: none; }
@@ -19,10 +19,8 @@ const Main = styled.main`
 const FooterWrap = styled.footer`
 `
 
-const FooterInner = styled.div`
-  max-width: 1120px;
-  margin: 0 auto;
-  padding: 20px;
+const FooterInnerText = styled.div`
+  padding: 20px 0;
   font-size: 14px;
   opacity: 0.9;
 `
@@ -34,7 +32,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
       <Header />
       <Main>{children}</Main>
       <FooterWrap>
-        <FooterInner>© {new Date().getFullYear()} USOPP Portfolio</FooterInner>
+        <Container>
+          <FooterInnerText>© {new Date().getFullYear()} USOPP Portfolio</FooterInnerText>
+        </Container>
       </FooterWrap>
     </>
   )
