@@ -1,7 +1,7 @@
 /** @type {import('gatsby').GatsbyConfig} */
 module.exports = {
   siteMetadata: {
-    title: 'USOPP | Portfolio',
+    title: 'Usopp is DevGenius',
     description: 'Frontend Developer Portfolio',
     siteUrl: 'https://usopp.is.devgenius.page'
   },
