@@ -8,7 +8,7 @@ const Root = styled.span`
   height: 24px;
   padding: 0 8px;
   border-radius: 999px;
-  font-size: 12px;
+  font-size: 16px;
   font-weight: 700;
   color: #0b1f3f;
   background: #f0f4fb;

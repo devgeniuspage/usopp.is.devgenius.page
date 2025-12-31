@@ -15,8 +15,8 @@ const TopBar = styled.header`
 `
 
 const Bar = styled.div<{ $compact?: boolean }>`
-  background: #ffffff;
-  border: 1px solid #e7edf6;
+  background: var(--card-bg);
+  border: 1px solid var(--border);
   border-radius: 9999px;
   padding: 22px;
   display: flex;
@@ -63,13 +63,13 @@ const BrandIcon = styled.span`
 `
 
 const NavLink = styled.a`
-  color: #5a6b85;
+  color: var(--link);
   font-weight: 700;
   font-size: 18px;
   padding: 6px 10px;
   border-radius: 8px;
   transition: color .12s ease, background .12s ease;
-  &:hover { color: #0b1f3f; background: #f5f8fd; }
+  &:hover { color: var(--link-hover); background: var(--hover-bg); }
 `
 
 const Links = styled.div<{ $visible: boolean }>`
@@ -88,9 +88,9 @@ const IconButton = styled.button`
   width: 36px;
   height: 36px;
   border-radius: 9999px;
-  border: 1px solid #e7edf6;
-  background: #f0f4fb;
-  color: #0b1f3f;
+  border: 1px solid var(--border);
+  background: var(--muted-bg);
+  color: var(--text);
   display: inline-flex;
   align-items: center;
   justify-content: center;
@@ -103,6 +103,10 @@ export default function Header() {
   const barRef = useRef<HTMLElement | null>(null)
   const prevYRef = useRef<number>(0)
   const [showLinks, setShowLinks] = useState(true)
+  const [theme, setTheme] = useState<'light' | 'dark'>(() => {
+    if (typeof document === 'undefined') return 'light'
+    return document.documentElement.getAttribute('data-theme') === 'dark' ? 'dark' : 'light'
+  })
 
   useEffect(() => {
     const updateOnce = () => {
@@ -133,6 +137,17 @@ export default function Header() {
     window.addEventListener('scroll', onScroll, { passive: true })
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
+  
+  const toggleTheme = () => {
+    const next = theme === 'dark' ? 'light' : 'dark'
+    setTheme(next)
+    if (typeof document !== 'undefined') {
+      document.documentElement.setAttribute('data-theme', next)
+    }
+    try {
+      if (typeof window !== 'undefined') window.localStorage.setItem('theme', next)
+    } catch {}
+  }
 
   return (
     <TopBar ref={barRef}>
@@ -149,7 +164,7 @@ export default function Header() {
           </Left>
           <Right>
             <Button variant="default" size="md">Contact</Button>
-            <IconButton aria-label="Toggle theme">☀️</IconButton>
+            <IconButton aria-label="Toggle theme" onClick={toggleTheme}>{theme === 'dark' ? '🌙' : '☀️'}</IconButton>
             <IconButton aria-label="Create">＋</IconButton>
           </Right>
         </Bar>

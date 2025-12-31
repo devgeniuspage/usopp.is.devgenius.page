@@ -13,10 +13,9 @@ const flash = keyframes`
 
 const Backdrop = styled.div`
   position: fixed;
-  inset: 0;
   pointer-events: none;
   z-index: 50;
-  // background: black;
+  background: var(--bg);
 `
 
 const Firefly = styled.span`
@@ -38,7 +37,7 @@ const Firefly = styled.span`
     transform-origin: -10vw;
   }
   &::before {
-    background: black;
+    background: var(--text);
     opacity: 0.4;
     animation: ${drift} ease alternate infinite;
     animation-duration: var(--rotation-duration, 10s);
