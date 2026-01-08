@@ -11,15 +11,15 @@ const Section = styled.section`
   padding: 120px 0 60px;
   
   h1 {
-    font-size: 4rem;
+    font-size: 2.9rem;
     font-weight: 800;
-    line-height: 5rem;
+    line-height: 3.5rem;
   }
     
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 500;
-    line-height: 2.5rem;
+    line-height: 2rem;
   }
 `
 

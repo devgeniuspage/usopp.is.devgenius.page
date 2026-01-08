@@ -18,7 +18,7 @@ const Bar = styled.div<{ $compact?: boolean }>`
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 9999px;
-  padding: 22px;
+  padding: 15px;
   display: flex;
   align-items: center;
   gap: 12px;

@@ -35,7 +35,7 @@ const GlobalStyle = createGlobalStyle`
 const Main = styled.main`
   min-height: calc(100vh - 140px);
   padding-top: var(--header-height, 200px);
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   color: var(--text);
 `
