@@ -54,7 +54,7 @@
   background: var(--card-bg);
   border: 1px solid var(--border);
   border-radius: 9999px;
-  padding: 22px;
+  padding: 15px;
   display: flex;
   align-items: center;
   gap: 12px;
@@ -193,7 +193,7 @@
 `,vn=Ut.main`
   min-height: calc(100vh - 140px);
   padding-top: var(--header-height, 200px);
-  width: 50%;
+  width: 70%;
   margin: 0 auto;
   color: var(--text);
 `,yn=Ut.footer`
@@ -255,15 +255,15 @@
   padding: 120px 0 60px;
   
   h1 {
-    font-size: 4rem;
+    font-size: 2.9rem;
     font-weight: 800;
-    line-height: 5rem;
+    line-height: 3.5rem;
   }
     
   h2 {
-    font-size: 1.5rem;
+    font-size: 1.15rem;
     font-weight: 500;
-    line-height: 2.5rem;
+    line-height: 2rem;
   }
 `,An=Ut.div`
   display: grid;
@@ -292,4 +292,4 @@
   text-decoration: none;
   &:hover { color: var(--link-hover); }
 `;var zn=()=>r.createElement(xn,null,r.createElement(Pn,null,r.createElement(An,null,r.createElement("div",null,r.createElement("h1",null,"안녕하세요.",r.createElement("br",null),"김건위(@Usopp)입니다."),r.createElement("h2",null,"화면에 가치를 담고 싶어하는 ",r.createElement("b",null,"프론트엔드 개발자"),"로",r.createElement("br",null),"사용자가 마주하는 모든 순간을 의미있게 만들고 있습니다.")),r.createElement(Nn,null,r.createElement(kn,null,r.createElement(Rn,null,"U"),r.createElement(jn,null,r.createElement(_n,null,"김건위(@Usopp)")),r.createElement(jn,null,r.createElement(_n,null,r.createElement(On,{href:"mailto:usopp@danbeeinc.com"},"usopp@danbeeinc.com"))),r.createElement(jn,null,r.createElement(_n,null,"프론트엔드 개발")),r.createElement(jn,null,r.createElement(_n,null,r.createElement(In,null,"danbee inc.")))),r.createElement($n,null)))))},833:function(e){e.exports=function(e,t,n,r){var o=n?n.call(r,e,t):void 0;if(void 0!==o)return!!o;if(e===t)return!0;if("object"!=typeof e||!e||"object"!=typeof t||!t)return!1;var a=Object.keys(e),i=Object.keys(t);if(a.length!==i.length)return!1;for(var s=Object.prototype.hasOwnProperty.bind(t),c=0;c<a.length;c++){var l=a[c];if(!s(l))return!1;var u=e[l],f=t[l];if(!1===(o=n?n.call(r,u,f,l):void 0)||void 0===o&&u!==f)return!1}return!0}}}]);
-//# sourceMappingURL=component---src-pages-index-tsx-e103351e97624b9174bb.js.map
+//# sourceMappingURL=component---src-pages-index-tsx-51f9fa0a289dd439713f.js.map
