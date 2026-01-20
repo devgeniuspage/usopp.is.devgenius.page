@@ -13,6 +13,7 @@ const GlobalStyle = createGlobalStyle`
     --header-height: 200px;
     --bg: #f7f9fc;
     --text: #0b1f3f;
+    --text-muted: #5a6b85;
     --card-bg: #ffffff;
     --border: #e7edf6;
     --muted-bg: #f0f4fb;
@@ -36,6 +37,7 @@ const Main = styled.main`
   min-height: calc(100vh - 140px);
   padding-top: var(--header-height, 200px);
   width: 70%;
+  max-width: 1200px;
   margin: 0 auto;
   color: var(--text);
 `

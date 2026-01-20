@@ -6,6 +6,8 @@ import { Separator } from '../components/ui/separator'
 import { Input } from '../components/ui/input'
 import { Card, CardHeader, CardTitle, CardContent, CardFooter, CardDescription } from '../components/ui/card'
 import { Badge } from '../components/ui/badge'
+import { ProjectCard } from '../components/ui/project-card'
+import projects from '../data/projects'
 
 const Section = styled.section`
   padding: 120px 0 60px;
@@ -21,6 +23,17 @@ const Section = styled.section`
     font-weight: 500;
     line-height: 2rem;
   }
+`
+
+const SectionTitle = styled.h2`
+  font-size: 2.5rem !important;
+  font-weight: 700 !important;
+  margin-bottom: 10px;
+`
+const SectionSubtitle = styled.p`
+  font-size: 1.2rem !important;
+  margin-bottom: 30px;
+  color: var(--text-muted);
 `
 
 const TwoColumn = styled.div`
@@ -61,6 +74,12 @@ const MutedLink = styled.a`
   &:hover { color: var(--link-hover); }
 `
 
+const ProjectCardContainer = styled.div`
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 32px;
+`
+
 const IndexPage: React.FC = () => {
   return (
     <Layout>
@@ -93,6 +112,21 @@ const IndexPage: React.FC = () => {
               <CardFooter></CardFooter>
             </ProfileCard>
           </TwoColumn>
+      </Section>
+      <Section>
+        <SectionTitle id="projects">Projects</SectionTitle>
+        <SectionSubtitle>Here are some of my projects.</SectionSubtitle>
+        <ProjectCardContainer>
+          {projects.map((project) => (
+            <ProjectCard
+              key={project.title}
+              imageUrl={project.imageUrl}
+              title={project.title}
+              description={project.description}
+              tags={project.tags}
+            />
+          ))}
+        </ProjectCardContainer>
       </Section>
     </Layout>
   );
